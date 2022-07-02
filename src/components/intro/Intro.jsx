@@ -2,7 +2,7 @@ import "./intro.css"
 
 const Intro = () => {
   return (
-    <header className="d-flex justify-content-center align-items-center">
+    <header>
         <p>Hello, I am</p>
         <h1 className="title">
             Jake Unruh 

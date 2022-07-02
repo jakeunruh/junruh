@@ -3,7 +3,8 @@
 }
 header {
     position: relative;
-    height: 100%;
+    padding: 30px;
+    height: 75vh;
     transform-style: preserve-3d;
     z-index: -1;
 }
@@ -21,10 +22,15 @@ header {
     z-index: -1
 }
 header p {
+    position: relative;
+    left: 11px;
+    margin: 0 0 .5rem;
     color: var(--mud);
 }
 .title {
+    margin: 0;
     font-size: 5rem;
+    line-height: 1;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     color: var(--green);
@@ -36,7 +42,9 @@ header p {
     transition: all .1s ease-out;
 }
 h2 {
+    font-size: 1.9rem;
     color: var(--olive);
-    left: 7px;
     position: relative;
+    left: 30px;
+    top: -10px;
 }
