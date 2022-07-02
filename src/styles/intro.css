@@ -1,0 +1,77 @@
+.dark {
+  background: #283618;
+  transition: all 0.1s ease-out;
+}
+.dark .toggle-button {
+  left: 0;
+  transition: all 0.1s ease-out;
+}
+.dark .toggle span {
+  color: #fefae0;
+  transition: all 0.1s ease-out;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+  background: #fefae0;
+  transition: all 0.1s ease-out;
+}
+
+header {
+  position: relative;
+  padding: 30px;
+  height: 75vh;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+header p {
+  position: relative;
+  left: 11px;
+  margin: 0 0 0.5rem;
+  color: #dda15e;
+}
+header .title {
+  margin: 0;
+  font-size: 5rem;
+  line-height: 1;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: #283618;
+  opacity: 1;
+  transition: all 0.1s ease-out;
+}
+header h2 {
+  font-size: 1.9rem;
+  color: #606c38;
+  position: relative;
+  left: 30px;
+  top: -10px;
+}
+
+.background {
+  transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+}
+
+.background, .foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}/*# sourceMappingURL=intro.css.map */

@@ -1,0 +1,30 @@
+//COLORS
+$white: #fefae0;
+$olive: #606c38;
+$green: #283618;
+$mud: #dda15e;
+$brick: #bc6c25;
+
+// FONTS
+$open: 'Open Sans', sans-serif;
+$josephin: 'Josefin Sans', sans-serif;
+
+// DARK OVERRIDES
+.wrapper.dark {
+    background: $green;
+    transition: all .1s ease-out;
+    .title {
+        color: $white;
+        transition: all .1s ease-out;
+    }
+    .toggle-button {
+        left: 0;
+        transition: all .1s ease-out;
+    }
+    .toggle {
+        span {
+            color: $white;
+            transition: all .1s ease-out;
+        }
+    }
+}

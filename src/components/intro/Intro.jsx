@@ -1,4 +1,4 @@
-import "./intro.css"
+import "../../styles/intro.scss"
 
 const Intro = () => {
   return (
