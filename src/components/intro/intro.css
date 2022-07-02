@@ -1,0 +1,42 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+.background {
+    transform: translateZ(-10px) scale(2);
+}
+.foreground {
+    transform: translateZ(-5px) scale(1.5);
+}
+.background, .foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1
+}
+header p {
+    color: var(--mud);
+}
+.title {
+    font-size: 5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: var(--green);
+    opacity: 1;
+    transition: all .1s ease-out;
+}
+.dark .title {
+    color: var(--white);
+    transition: all .1s ease-out;
+}
+h2 {
+    color: var(--olive);
+    left: 7px;
+    position: relative;
+}

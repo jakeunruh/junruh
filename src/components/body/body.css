@@ -1,0 +1,9 @@
+section {
+    padding: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #212427;
+    background-color: #fff;
+}
+section p {
+    font-size: 1.6rem;
+}
