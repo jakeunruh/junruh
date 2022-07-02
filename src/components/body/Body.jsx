@@ -1,4 +1,4 @@
-import "../../styles/body.css"
+import "./body.scss"
 
 const Body = () => {
   return (
