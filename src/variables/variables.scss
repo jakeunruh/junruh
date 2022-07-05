@@ -19,6 +19,7 @@ $josephin: 'Josefin Sans', sans-serif;
     }
     .toggle-button {
         left: 0;
+        border-radius: 7px 0 0 7px;
         transition: all .1s ease-out;
     }
     .toggle {
@@ -26,5 +27,8 @@ $josephin: 'Josefin Sans', sans-serif;
             color: $white;
             transition: all .1s ease-out;
         }
+    }
+    header {
+        background-color: rgba($color: $green, $alpha: .75);
     }
 }
