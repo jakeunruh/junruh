@@ -1,14 +1,14 @@
-import "./intro.scss"
+import "../../styles/intro.scss"
 
 const Intro = () => {
   return (
-    <div className="intro">
-        <p>Hello, I am</p>
+    <section className="intro">
+        {/* <p>Hello, I am</p> */}
         <h1 className="title">
-            Jake Unruh 
+            <span>Jake</span>Unruh 
         </h1>
-        <h2>and I adjust the front end.</h2>
-    </div>
+        {/* <h2>and I adjust the front end.</h2> */}
+    </section>
   )
 }
 

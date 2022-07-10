@@ -1,0 +1,28 @@
+@use "./variables.scss" as v;
+
+// LIGHT THEME VARIABLES
+html{
+    --bg-color: #{v.$white};
+    --text-color: #{v.$black};
+    --toggle-position: 0;
+    --toggle-button-radius: 7px 0 0 7px;
+}
+// DARK THEME VARIABLES
+html[data-theme='dark'] {
+    --bg-color: #{v.$black};
+    --text-color: #{v.$white};
+    --toggle-position: 30px;
+    --toggle-button-radius: 0 7px 7px 0;
+}
+
+// MAIN STYLES
+html {
+    width: 100%;
+    height: 100vh;
+}
+body {
+    font-family: v.$open;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: all .1s ease-out;
+}

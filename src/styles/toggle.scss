@@ -1,8 +1,10 @@
-@import "../../variables/variables.scss";
+@use "./variables.scss" as v;
+@use "./theme.scss" as t;
+
 .toggle {
     width: 60px;
     height: 30px;
-    border: 1px solid $mud;
+    border: 1px solid v.$orange;
     border-radius: 7px;
     position: fixed;
     top: 15px;
@@ -12,17 +14,17 @@
     justify-content: space-around;
     align-items: center;
     span {
-        color: $olive;
+        color: var(--text-color);
         transition: all .1s ease-out;
     }
 }
 .toggle-button {
     position: absolute;
-    left: 30px;
+    left: var(--toggle-position);
     width: 30px;
     height: 30px;
-    background-color: $brick;
-    border-radius: 0 7px 7px 0;
+    background-color: v.$orange;
+    border-radius: var(--toggle-button-radius);
     cursor: pointer;
     transition: all .1s ease-out;
 }

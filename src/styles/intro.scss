@@ -1,0 +1,59 @@
+@use "./variables.scss" as v;
+@use "./theme.scss";
+
+.intro {
+    position: relative;
+    padding: 115px 30px 0;
+    // transform-style: preserve-3d;
+    // z-index: -1;
+    p {
+        position: relative;
+        left: 3px;
+        margin: 0;
+    }
+    h1.title {
+        position: relative;
+        margin: 0;
+        font-family: v.$kanit;
+        font-size: 8rem;
+        font-weight: 900;
+        line-height: .8;
+        letter-spacing: .01rem;
+        color: var(--text-color);
+        opacity: 1;
+        transition: all .1s ease-out;
+        span {
+            position: absolute;
+            left: -96px;
+            top: 195px;
+            font-family: v.$kanit;
+            font-size: 8rem;
+            font-weight: 900;
+            line-height: .8;
+            letter-spacing: .01rem;
+            color: var(--text-color);
+            transform: rotate(-90deg);
+        }
+    }
+    h2 {
+        position: relative;
+        left: 110px;
+        top: 5px;
+        font-size: 1.9rem;
+        color: v.$orange;
+    }
+}
+// .background {
+//     transform: translateZ(-10px) scale(2);
+// }
+// .foreground {
+//     transform: translateZ(-5px) scale(1.5);
+// }
+
+// .background, .foreground {
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//     z-index: -1
+// }
