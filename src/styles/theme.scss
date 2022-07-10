@@ -4,6 +4,8 @@
 html{
     --bg-color: #{v.$white};
     --text-color: #{v.$black};
+    --highlight-primary-color: #{v.$black};
+    --highlight-secondary-color: #{v.$orange};
     --toggle-position: 0;
     --toggle-button-radius: 7px 0 0 7px;
 }
@@ -11,6 +13,8 @@ html{
 html[data-theme='dark'] {
     --bg-color: #{v.$black};
     --text-color: #{v.$white};
+    --highlight-primary-color: #{v.$orange};
+    --highlight-secondary-color: #{v.$yellow};
     --toggle-position: 30px;
     --toggle-button-radius: 0 7px 7px 0;
 }
@@ -25,4 +29,18 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     transition: all .1s ease-out;
+}
+#root {
+    position: relative;
+    &:before {
+        content: "";
+        position: fixed;
+        top: 75px;
+        left: 70px;
+        display: block;
+        height: 560px;
+        width: 435px;
+        background: url("../img/head.png") no-repeat 0 0;
+        background-size: contain;
+    }
 }

@@ -1,6 +1,6 @@
 import Header from "./components/header/Header";
-import Intro from "./components/intro/Intro";
-import Body from "./components/body/Body";
+// import Intro from "./components/intro/Intro";
+import Main from "./components/main/Main";
 import DarkModeToggle from "./components/dark-mode-toggle/DarkModeToggle";
 
 const App = () => {
@@ -9,9 +9,9 @@ const App = () => {
     // if dark mode is true add class of dark, if not, remove dark class
     <>
       <Header />
+      {/* <Intro /> */}
+      <Main />
       <DarkModeToggle />
-      <Intro />
-      <Body />
     </>
   );
 };

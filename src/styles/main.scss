@@ -1,0 +1,25 @@
+@use "./theme.scss" as t;
+@use "./variables.scss" as v;
+
+.main {
+    padding: 1.5rem 8rem 1.5rem 30.5rem;
+    &__content {
+        position: relative;
+        padding: 1.5em;
+        border: 1px solid var(--highlight-primary-color);
+        border-radius: 10px;
+        background-color: rgba(var(--bg-color), .6);
+        &:before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            border-top: 1px solid var(--highlight-secondary-color);
+            border-left: 1px solid var(--highlight-secondary-color);
+            border-radius: 13px 13px 5px 13px;
+        }
+    }
+}

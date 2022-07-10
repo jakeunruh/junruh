@@ -2,34 +2,69 @@
 @use "./mixins.scss" as m;
 @use "./theme.scss" as t;
 
-header {
-    position: fixed;
+.header {
+    $self: &;
+    position: sticky;
     top: 0;
     z-index: 1;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    height: 115px;
     width: 100%;
-    height: 70px;
-    padding: 10px 30px;
+    padding: 0 15px;
     background-color: rgba($color: var(--bg-color), $alpha: .85);
     -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px);
     transition-property: all; 
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 500ms;
-    &.hide {
-        top: -71px;
-    }
-    .img {
-        height: 100%;
-        img {
-            height: 100%;
+    &.header--hide {
+        background-color: transparent;
+        #{ $self }__title {
+            font-size: 2rem;
+        }
+        #{ $self }__span--vertical {
+            position: relative;
+            left: auto;
+            top: auto;
+            transform: rotate(0);
+            margin-right: 3px;
+        }
+        #{ $self }__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
-    .hamburder-toggler {
+    &__title {
         position: relative;
-        top: 0;
-        right: 0;
+        margin: 0;
+        font-family: v.$kanit;
+        font-size: 9rem;
+        font-weight: 900;
+        line-height: .8;
+        letter-spacing: .01rem;
+        color: var(--text-color);
+        opacity: 1;
+        transition: all .1s ease-out;
+    }
+    &__span--vertical {
+        position: absolute;
+        left: -108px;
+        top: 220px;
+        transform: rotate(-90deg);
+        transition: all .1s ease-out;
+    }
+    &__logo {
+        display: none;
+        height: 100%;
+        img {
+            height: 50%;
+        }
+    }
+    &__hamburder-toggler {
+        position: relative;
         width: 50px;
         height: 40px;
         cursor: pointer;
@@ -37,34 +72,34 @@ header {
         background: none;
         outline: none;
         border-radius: 4px;
-        .hamburder-toggler-icon,
-        .hamburder-toggler-icon:before, 
-        .hamburder-toggler-icon:after
-         {
-            position: absolute;
-            width: 30px;
-            height: 3px;
-            border-radius: 4px;
-            background-color: var(--text-color);
-            transition: all .3s ease;
-        }
-        .hamburder-toggler-icon:before, 
-        .hamburder-toggler-icon:after {
-            content: "";
-            display: block;
-        }
-        .hamburder-toggler-icon {
-            top: 8px;
-            left: 10px;
-            &:before {
-                top: 10px;
-            }
-            &:after {
-                top: 20px;
-            }
-        }
         @include m.breakpoint(lg) {
             display: none;
+        }
+    }
+    &__hamburder-icon,
+    &__hamburder-icon:before, 
+    &__hamburder-icon:after
+     {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        border-radius: 4px;
+        background-color: var(--text-color);
+        transition: all .3s ease;
+    }
+    &__hamburder-icon:before, 
+    &__hamburder-icon:after {
+        content: "";
+        display: block;
+    }
+    &__hamburder-icon {
+        top: 8px;
+        left: 10px;
+        &:before {
+            top: 10px;
+        }
+        &:after {
+            top: 20px;
         }
     }
 }
