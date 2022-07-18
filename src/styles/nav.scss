@@ -1,0 +1,71 @@
+@use "./mixins.scss" as m;
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+
+    &__list {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__list-item {
+        display: inline-block;
+        padding: 0;
+        margin: 0 20px 0 0;
+        vertical-align: middle;
+        a {
+            text-decoration: none;
+        }
+    } 
+
+    &__menu-toggler {
+        position: relative;
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        outline: none;
+        border-radius: 4px;
+    }
+
+    &__menu-icon,
+    &__menu-icon:before, 
+    &__menu-icon:after {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        border-radius: 4px;
+        background-color: var(--text-color);
+        transition: all .3s ease;
+    }
+
+    &__menu-icon:before, 
+    &__menu-icon:after {
+        content: "";
+        display: block;
+    }
+
+    &__menu-icon {
+        top: 8px;
+        left: 10px;
+        &:before {
+            top: 10px;
+        }
+        &:after {
+            top: 20px;
+        }
+    }
+    @include m.for-size(tablet-landscape-up) {
+        &__list {
+            display: block;
+        }
+        &__menu-toggler {
+            display: none;
+        }
+    }
+}

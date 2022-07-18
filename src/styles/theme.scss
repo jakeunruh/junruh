@@ -1,4 +1,5 @@
 @use "./variables.scss" as v;
+@use "./mixins.scss" as m;
 
 // LIGHT THEME VARIABLES
 html{
@@ -6,8 +7,8 @@ html{
     --text-color: #{v.$black};
     --highlight-primary-color: #{v.$black};
     --highlight-secondary-color: #{v.$orange};
-    --toggle-position: 0;
-    --toggle-button-radius: 7px 0 0 7px;
+    --mode-toggle-color: invert(0%) sepia(100%) saturate(7500%) hue-rotate(257deg) brightness(94%) contrast(106%);
+    --mode-toggle-direction: rotate(180deg);
 }
 // DARK THEME VARIABLES
 html[data-theme='dark'] {
@@ -15,8 +16,8 @@ html[data-theme='dark'] {
     --text-color: #{v.$white};
     --highlight-primary-color: #{v.$orange};
     --highlight-secondary-color: #{v.$yellow};
-    --toggle-position: 30px;
-    --toggle-button-radius: 0 7px 7px 0;
+    --mode-toggle-color: invert(78%) sepia(13%) saturate(7458%) hue-rotate(336deg) brightness(108%) contrast(97%);
+    --mode-toggle-direction: rotate(0);
 }
 
 // MAIN STYLES
@@ -30,6 +31,32 @@ body {
     background-color: var(--bg-color);
     transition: all .1s ease-out;
 }
+a {
+    color: var(--text-color);
+    &:hover {
+        color: var(--highlight-secondary-color);
+    }
+}
+
+/************
+buttons
+*************/
+
+.btn {
+    display: inline-block;
+    min-width: 150px;
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid v.$orange;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-decoration: none;
+    &:hover {
+        background-color: rgba(v.$orange, .5);
+        color: var(--text-color);
+    }
+}
+
 #root {
     position: relative;
     &:before {
@@ -40,7 +67,16 @@ body {
         display: block;
         height: 560px;
         width: 435px;
-        background: url("../img/head.png") no-repeat 0 0;
+        background: url("../assets/img/head.png") no-repeat 0 0;
         background-size: contain;
+        opacity: .3;
+    }
+    @include m.for-size(phone-only) {
+        &:before {
+            top: 80px;
+            left: 55px;
+            height: 330px;
+            width: 260px
+        }
     }
 }

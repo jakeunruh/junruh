@@ -1,30 +1,23 @@
 @use "./variables.scss" as v;
 @use "./theme.scss" as t;
 
-.toggle {
-    width: 60px;
-    height: 30px;
-    border: 1px solid v.$orange;
-    border-radius: 7px;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 999;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    span {
-        color: var(--text-color);
-        transition: all .1s ease-out;
+.nav {
+    &__mode-toggler.btn {
+        position: relative;
+        min-width: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1) var(--mode-toggle-direction);
+            filter: var(--mode-toggle-color);
+        }
     }
-}
-.toggle-button {
-    position: absolute;
-    left: var(--toggle-position);
-    width: 30px;
-    height: 30px;
-    background-color: v.$orange;
-    border-radius: var(--toggle-button-radius);
-    cursor: pointer;
-    transition: all .1s ease-out;
 }

@@ -1,17 +1,16 @@
 import Header from "./components/header/Header";
-// import Intro from "./components/intro/Intro";
+import Nav from "./components/nav/Nav";
 import Main from "./components/main/Main";
-import DarkModeToggle from "./components/dark-mode-toggle/DarkModeToggle";
 
 const App = () => {
 
   return (
-    // if dark mode is true add class of dark, if not, remove dark class
     <>
-      <Header />
-      {/* <Intro /> */}
+      <div className="top">
+        <Header />
+        <Nav />
+      </div>
       <Main />
-      <DarkModeToggle />
     </>
   );
 };

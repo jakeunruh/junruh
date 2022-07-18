@@ -1,7 +1,15 @@
-@use "./variables.scss" as v;
 @use "./mixins.scss" as m;
 @use "./theme.scss" as t;
+@use "./variables.scss" as v;
 
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > * {
+        width: 50%;
+    }
+}
 .header {
     $self: &;
     position: sticky;
@@ -11,7 +19,6 @@
     justify-content: space-between;
     align-items: center;
     height: 115px;
-    width: 100%;
     padding: 0 15px;
     background-color: rgba($color: var(--bg-color), $alpha: .85);
     -webkit-backdrop-filter: blur(1px);
@@ -30,7 +37,7 @@
                 display: inline-block;
                 height: 60px;
                 width: 60px;
-                background: url("../img/logo.svg") no-repeat 0 0;
+                background: url("../assets/img/logo.svg") no-repeat 0 0;
                 background-size: 100%;
             }
         }
@@ -51,7 +58,7 @@
         position: relative;
         margin: 0;
         font-family: v.$kanit;
-        font-size: 9rem;
+        @include m.fs(150);
         font-weight: 900;
         line-height: .8;
         letter-spacing: .01rem;
@@ -61,48 +68,14 @@
     }
     &__span--vertical {
         position: absolute;
-        left: -108px;
-        top: 220px;
-        transform: rotate(-90deg);
+        transform-origin: 0 0;
+        transform: rotate(-90deg) translate(-137%, 0%);
         transition: all .1s ease-out;
     }
-    &__hamburder-toggler {
-        position: relative;
-        width: 50px;
-        height: 40px;
-        cursor: pointer;
-        border: none;
-        background: none;
-        outline: none;
-        border-radius: 4px;
-        @include m.breakpoint(lg) {
-            display: none;
+    @include m.for-size(phone-only) {
+        &__title {
+            @include m.fs(80);
         }
     }
-    &__hamburder-icon,
-    &__hamburder-icon:before, 
-    &__hamburder-icon:after
-     {
-        position: absolute;
-        width: 30px;
-        height: 3px;
-        border-radius: 4px;
-        background-color: var(--text-color);
-        transition: all .3s ease;
-    }
-    &__hamburder-icon:before, 
-    &__hamburder-icon:after {
-        content: "";
-        display: block;
-    }
-    &__hamburder-icon {
-        top: 8px;
-        left: 10px;
-        &:before {
-            top: 10px;
-        }
-        &:after {
-            top: 20px;
-        }
-    }
+
 }
